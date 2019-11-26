@@ -1,0 +1,463 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Formation Git</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+                    <h1>Formation Git</h1>
+                    <h3>Décembre 2019</h3>
+                </section>
+				<section>
+                    <h1>Bienvenue</h1>
+                </section>
+                <section>
+                    <section>
+                        <h1>Présentation</h1>
+                    </section>
+                    <section>
+                        <h1>Arnaud PETITPAS</h1>
+                        <h2>28 ans, Nantes</h2>
+                        <h3>Ingénieur informatique</h3>
+                        <h3>Développeur et consultant indépendant</h3>
+                    </section>
+                    <section>
+                        <h1>Et vous ?</h1>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Formation</h1>
+                    </section>
+                    <section>
+                        <h1>Horaires</h1>
+                    </section>
+                    <section>
+                        <h1>2 jours</h1>
+                    </section>
+                    <section>
+                        <h1>10h - 18h</h1>
+                    </section>
+                    <section>
+                        <h1>15 minutes matin et après-midi</h1>
+                    </section>
+                    <section>
+                        <h1>1h30 le midi</h1>
+                    </section>
+                    <section>
+                        <h1>Des contraintes ?</h1>
+                    </section>
+                    <section>
+                        <h1>Programmes</h1>
+                    </section>
+                    <section>
+                        <a target="_blank" href="https://www.pythagore-fd.fr/formations/catalogue/Langages/UX151-formation-GestionVersionGit.jsp">
+                            Programme de formation Git
+                        </a>
+                    </section>
+                    <section>
+                        <h1>Objectifs</h1>
+                        <ul>
+                            <li>Comprendre les concepts clés de Git</li>
+                            <li>Maîtriser les commandes principales</li>
+                            <li>Etre capable de transmettre vos connaissances</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <h1>Environnement</h1>
+                    <ul>
+                        <li>Git</li>
+                        <li>GitHub</li>
+                        <li>CLI</li>
+                        <li>Sublime Text</li>
+                        <li>Git for Windows</li>
+                    </ul>
+                </section>
+                <section>
+                    <h1>Ressources</h1>
+                    <ul>
+                        <li>Git cheat sheet</li>
+                        <li>Openclassrooms</li>
+                        <li>Stackoverflow</li>
+                        <li>GitHub</li>
+                        <li>Google</li>
+                    </ul>
+                </section>
+                <section>
+                    <h1>On commence</h1>
+                </section>
+                <section>
+                    <h1>Pourquoi la CLI ?</h1>
+                    <ul>
+                        <li>Historique</li>
+                        <li>Nouvelles fonctionnalités</li>
+                        <li>Aide en ligne</li>
+                        <li>Tout le monde est à l'aise ?</li>
+                    </ul>
+                </section>
+                <section>
+                    <h1>Pourquoi versionner ?</h1>
+                    <ul>
+                        <li>Backup / Archive</li>
+                        <li>Historique</li>
+                        <li>Annuler des changements</li>
+                        <li>Comparer</li>
+                        <li>Travailler en équipe</li>
+                        <li>Trouver le coupable :D</li>
+                    </ul>
+                </section>
+                <section>
+                    <section>
+                        <h1>Deux types de système</h1>
+                    </section>
+                    <section>
+                        <h1>Centralisé</h1>
+                        <ul>
+                            <li>Subversion</li>
+                            <li>CVS</li>
+                            <li>Clearcase</li>
+                            <li>Perforce</li>
+                            <li>TFS</li>
+                            <li>Requiert une connexion au serveur central pour la plupart des opérations</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h1>Décentralisé</h1>
+                        <ul>
+                            <li>Mercurial (Hg)</li>
+                            <li>Git</li>
+                            <li>Bazaar</li>
+                            <li>La plupart des opérations se font localement</li>
+                            <li>Un server central n'est pas nécessaire</li>
+                            <li>Le code est présent sur toutes les machines</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <h1>Qu'est ce que Git ?</h1>
+                    <ul>
+                        <li>Système distribué</li>
+                        <li>Scale facilement</li>
+                        <li>Open source</li>
+                        <li>Un server central n'est pas nécessaire</li>
+                        <li>Très rapide</li>
+                        <li>Grande communauté</li>
+                        <li>Système de versionning le plus populaire</li>
+                    </ul>
+                </section>
+                <section>
+                    <h1>Historique</h1>
+                    <ul>
+                        <li>Première version en 2005</li>
+                        <li>Linus Thorvalds</li>
+                        <li>Initialement développé pour le projet Linux</li>
+                        <li>Origine du nom :)</li>
+                    </ul>
+                </section>
+                <section>
+                    <h1>Concepts clés</h1>
+                    <ul>
+                        <li>Dépot = Repository</li>
+                        <li>Contient fichiers, historique et config Git</li>
+                        <li>3 états locaux (repertoire de travail, staging, commit)</li>
+                        <li>Dépot distant (GitHub) = source de vérité</li>
+                        <li>Branche Master</li>
+                    </ul>
+                </section>
+                <section>
+                    <section>
+                        <h1>GitHub</h1>
+                        <p>Qui connait et a un compte GitHub ?</p>
+                    </section>
+                    <section>
+                        <h1>Quelques infos</h1>
+                        <ul>
+                            <li>Hébergeur Git le plus populaire</li>
+                            <li>Beaucoup de projets open-source dont Symfony</li>
+                            <li>Gratuit jusqu'à 3 utilisateurs</li>
+                            <li>Créé en 2008</li>
+                            <li>Racheté par MS en Juin 2018 pour 7,5Md$</li>
+                            <li>14 millions d'utilisateurs</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <h1>Tour d'horizon</h1>
+                </section>
+                <section>
+                    <h1>Installation Git for Windows</h1>
+                    <a target="_blank" href="https://github.com/git-for-windows/git/releases/tag/v2.24.0.windows.2">Git for Windows</a>
+                </section>
+                <section>
+                    <h1>Création d'un premier dépot</h1>
+                    <a target="_blank" href="https://github.com">GitHub</a>
+                </section>
+                <section>
+                    <h1>Création du workspace</h1>
+                    <pre>
+                        <code class="hljs" data-trim data-line-numbers="1-3">
+$ pwd
+$ mkdir projects
+$ cd projects
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <h1>Git Version</h1>
+                    <pre>
+                        <code class="hljs" data-trim data-line-numbers="1">
+$ git version
+$ git version 2.15.0
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <h1>Configuration</h1>
+                    <pre>
+                        <code class="hljs" data-trim data-line-numbers="1-3">
+$ git config --global user.name "apetitpa"
+$ git config --global user.email "arnaudpetitpas@protonmail.ch"
+$ git config --global --list
+$ user.name=apetitpa
+$ user.email=arnaudpetitpas@protonmail.ch
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <section>
+                        <h1>Git clone</h1>
+                        <pre>
+                            <code class="hljs" data-trim data-line-numbers="1,2,4,5,7">
+$ git clone https://github.com/apetitpa/github-demo.git
+$ ls
+$ github-demo/
+$ cd github-demo
+$ ls
+$ README.md
+$ git status
+$ On branch master
+$ Your branch is up-to-date with 'origin/master'.
+$
+$ nothing to commit, working directory clean
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <ul>
+                            <li>Branche master</li>
+                            <li>Remote origin/master</li>
+                            <li>Working directory clean</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <h1>Ajout d'un fichier</h1>
+                    <pre>
+                        <code class="hljs" data-trim data-line-numbers="1,2,4,6-11">
+$ echo "Test Git" >> start.txt
+$ ls
+$ README.md start.txt
+$ cat start.txt
+$ Test Git
+$ git status
+$ git add start.txt
+$ git status
+$ git commit -m "Adding start.txt"
+$ git status
+$ git push origin master
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <h1>Commandes de base</h1>
+                    <ul>
+                        <li>Démarrage d'un projet from scratch</li>
+                        <li>Démarrage d'un projet existant localement</li>
+                        <li>Démarrage d'un projet existant distant</li>
+                        <li>Workflow de base (add, commit, push, pull)</li>
+                        <li>Fichiers (rename, move, delete)</li>
+                        <li>Historique et alias</li>
+                        <li>Ignorer des fichiers</li>
+                    </ul>
+                </section>
+                <section>
+                    <section>
+                        <h1>Projet from scratch</h1>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="hljs" data-trim data-line-numbers="1-6">
+$ pwd
+$ cd projects
+$ pwd
+$ git init fresh-project
+$ ls
+$ cd fresh-project/
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="hljs" data-trim data-line-numbers="1-12">
+$ ls
+$ ls -al
+$ cd .git
+$ ls
+$ cd ..
+$ pwd
+$ git status
+$ subl lorem.txt
+$ git status
+$ git add lorem.txt
+$ git status
+$ git commit
+$ git status
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="hljs" data-trim data-line-numbers="1-3">
+$ cd ..
+$ ls
+$ rm -rf fresh-project
+                            </code>
+                        </pre>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Projet existant</h1>
+                        <a target="_blank" href="http://www.initializr.com/">http://www.initializr.com/</a>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="hljs" data-trim data-line-numbers="1-9">
+$ pwd
+$ cd projects/
+$ unzip ~/Downloads/initializr-verekia-4.0.zip
+$ ls
+$ mv initializr web-project
+$ ls
+$ cd web-project
+$ pwd
+$ ls
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="hljs" data-trim data-line-numbers="1-7">
+$ git init
+$ ls -al
+$ git status
+$ git add .
+$ git status
+$ git commit -m "Initial commit"
+$ git status
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="hljs" data-trim data-line-numbers="1-9">
+$ clear
+$ git status
+$ ls -al
+$ rm -rf .git
+$ ls -al
+$ cd ..
+$ pwd
+$ ls
+$ rm -rf web-project
+                            </code>
+                        </pre>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Rejoindre un projet GitHub</h1>
+                        <a target="_blank" href="https://github.com/symfony/demo">Symfony Demo</a>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="hljs" data-trim data-line-numbers="1-11">
+$ pwd
+$ cd projects
+$ git clone https://github.com/apetitpa/demo.git
+$ ls
+$ cd demo/
+$ ls
+$ ls -al
+$ cd .git
+$ cd ..
+$ clear
+$ git status
+                            </code>
+                        </pre>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Workflow Git de base</h1>
+                        <ul>
+                            <li>Add</li>
+                            <li>Commit</li>
+                            <li>Push</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="hljs" data-trim data-line-numbers="1-11">
+$ pwd
+$ cd projects
+$ git clone https://github.com/apetitpa/demo.git
+$ ls
+$ cd demo/
+$ ls
+$ ls -al
+$ cd .git
+$ cd ..
+$ clear
+$ git status
+                            </code>
+                        </pre>
+                    </section>
+                </section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
