@@ -326,7 +326,7 @@ $ ls
 $ cd ..
 $ pwd
 $ git status
-$ subl lorem.txt
+$ vim lorem.txt
 $ git status
 $ git add lorem.txt
 $ git status
@@ -396,17 +396,17 @@ $ rm -rf web-project
                 </section>
                 <section>
                     <section>
-                        <h1>Rejoindre un projet GitHub</h1>
-                        <a target="_blank" href="https://github.com/symfony/demo">Symfony Demo</a>
+                        <h1>Rejoindre un projet GitHub (fork)</h1>
+                        <a target="_blank" href="https://github.com/apetitpa/formation-git">Formation git</a>
                     </section>
                     <section>
                         <pre>
                             <code class="hljs" data-trim data-line-numbers="1-11">
 $ pwd
 $ cd projects
-$ git clone https://github.com/apetitpa/demo.git
+$ git clone https://github.com/apetitpa/formation-git.git
 $ ls
-$ cd demo/
+$ cd formation-git/
 $ ls
 $ ls -al
 $ cd .git
@@ -430,16 +430,414 @@ $ git status
                         <pre>
                             <code class="hljs" data-trim data-line-numbers="1-11">
 $ pwd
-$ cd projects
-$ git clone https://github.com/apetitpa/demo.git
+$ cd projects/
 $ ls
-$ cd demo/
-$ ls
-$ ls -al
-$ cd .git
-$ cd ..
-$ clear
+$ cd formation-git/
+$ cd ls
 $ git status
+$ vim dummy.txt
+$ git add dummy.txt
+$ git status
+$ git commit -m "Add dummy.txt"
+$ git status
+$ git pull origin master
+$ git push origin master
+                            </code>
+                        </pre>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Fichiers suivis</h1>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="hljs" data-trim data-line-numbers="1-12">
+$ pwd
+$ cd projects/
+$ ls
+$ cd formation-git/
+$ cd ls
+$ git status
+$ vim dummy.txt
+$ git status
+$ git commit -am "Add more lorem ipsum text"
+$ git status
+$ git pull origin master
+$ git push origin master
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <p>Ne peut être utilisé qu'avec les fichiers suivis, c'est à dire n'importe quel fichier qui n'est pas complètement nouveau</p>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="hljs" data-trim data-line-numbers="1-7">
+$ git ls-files
+$ vim foo.txt
+$ git status
+$ git ls-files
+$ git add foo.txt
+$ git status
+$ git ls-files
+                            </code>
+                        </pre>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Modifier un fichier</h1>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="hljs" data-trim data-line-numbers="1-12">
+$ ls
+$ vim dummy.txt
+$ git status
+$ git commit -m "Adding new file"
+$ git status
+$ git add dummy.txt
+$ git status
+$ vim dummy.txt
+$ git status
+$ git add dummy.txt
+$ git status
+$ git commit -m "More ipsums"
+                            </code>
+                        </pre>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Ajout récursif</h1>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="hljs" data-trim data-line-numbers="1-10">
+$ pwd
+$ git status
+$ mkdir -p level1/level2/level3
+$ ls
+$ cd level1/
+$ vim level1-file.txt
+$ ls
+$ cd level2/
+$ vim level2-file.txt
+$ ls
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="hljs" data-trim data-line-numbers="1-9">
+$ cd level3/
+$ vim level3-file.txt
+$ ls
+$ cd ../../..
+$ ls
+$ git status
+$ git add .
+$ git status
+$ git commit
+                            </code>
+                        </pre>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Annuler des changements</h1>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="hljs" data-trim data-line-numbers="1-15">
+$ git status
+$ cd level1/
+$ ls
+$ vim level1-file.txt
+$ git status
+$ git add level1-file.txt
+$ git status
+$ vim level1-file.txt
+$ git status
+$ git reset HEAD level1-file.txt
+$ git status
+$ vim level1-file.txt
+$ git checkout -- level1-file.txt
+$ git status
+$ vim level1-file.txt
+                            </code>
+                        </pre>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Renommer et déplacer des fichiers</h1>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="hljs" data-trim data-line-numbers="1-7">
+$ ls
+$ cd level2/level3
+$ git status
+$ git mv level3-file.txt level3.txt
+$ ls
+$ git status
+$ git commit -m "renaming level3 file"
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="hljs" data-trim data-line-numbers="1-9">
+$ clear
+$ cd ../
+$ pwd
+$ ls
+$ mv file level2-file.txt level2.txt
+$ git status
+$ git add -A
+$ git status
+$ git commit -m "renaming level2 file"
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="hljs" data-trim data-line-numbers="1-7">
+$ clear
+$ ls
+$ git mv level2.txt 2.txt
+$ ls
+$ git status
+$ git mv 2.txt level2.txt
+$ git status
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="hljs" data-trim data-line-numbers="1-13">
+$ clear
+$ ls
+$ git mv level2.txt level3/
+$ ls
+$ cd level3/
+$ ls
+$ git status
+$ cd ..
+$ git status
+$ git commit -m "move level2.txt"
+$ ls
+$ cd level3/
+$ ls
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="hljs" data-trim data-line-numbers="1-7">
+$ mv level2.txt ../
+$ ls
+$ cd ../
+$ ls
+$ git status
+$ git add -A
+$ git commit -m "move back level2.txt to level2 directory"
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="hljs" data-trim data-line-numbers="1-8">
+$ cd ..
+$ pwd
+$ (Renommer via Finder)
+$ ls
+$ git status
+$ git add level1.txt
+$ git add -u
+$ git commit -m "rename level1.txt"
+                            </code>
+                        </pre>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Supprimer des fichiers</h1>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="hljs" data-trim data-line-numbers="1-9">
+$ pwd
+$ ls
+$ vim doomed.txt
+$ ls
+$ git status
+$ git rm doomed.txt
+$ rm doomed.txt
+$ ls
+$ git status
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="hljs" data-trim data-line-numbers="1-7">
+$ git ls-files
+$ ls
+$ git rm somefile.txt
+$ ls
+$ git status
+$ git commit -m "Delete somefile.txt"
+$ git status
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="hljs" data-trim data-line-numbers="1-11">
+$ git ls-files
+$ ls
+$ git rm somefile.txt
+$ ls
+$ git status
+$ git reset HEAD somefile.txt
+$ ls
+$ git status
+$ git checkout -- somefile.txt
+$ ls
+$ git status
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="hljs" data-trim data-line-numbers="1-8">
+$ ls
+$ rm somefile.txt
+$ ls
+$ git status
+$ git add -A
+$ git status
+$ git commit -m "delete somefile.txt"
+$ git status
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="hljs" data-trim data-line-numbers="1-8">
+$ ls
+$ rm -rf level1
+$ ls
+$ git status
+$ git add -A
+$ git status
+$ git commit -m "delete level1 folder"
+$ git status
+                            </code>
+                        </pre>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Historique</h1>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="hljs" data-trim data-line-numbers="1-11">
+$ pwd
+$ git help log
+$ git status
+$ git log
+$ git log --abbrev-commit
+$ git log --oneline --graph --decorate
+$ git log commitSha1...commitSha1
+$ git log --since="3 days ago"
+$ git log -- somefile.txt
+$ git log --follow -- level1/level2/level12.txt
+$ git show commitSha1
+                            </code>
+                        </pre>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Alias</h1>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="hljs" data-trim data-line-numbers="1-8">
+$ pwd
+$ ls
+$ git status
+$ git log --all --graph --decorate --oneline
+$ git hist
+$ git config --global alias.hist "log --all --graph --decorate --oneline"
+$ git hist
+$ vim /.gitconfig
+                            </code>
+                        </pre>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Ignorer des fichiers</h1>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="hljs" data-trim data-line-numbers="1-5">
+$ pwd
+$ ls
+$ git status
+$ ls -al
+$ vim .gitignore
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <ul>
+                            <li>Nom d'un fichier : exemple.txt</li>
+                            <li>Pattern: *.jpg</li>
+                            <li>Dossier: dossier/</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="hljs" data-trim data-line-numbers="1-16">
+$ ls -al
+$ git status
+$ git add .gitignore
+$ git status
+$ git commit -m "add .gitignore file"
+$ git status
+$ vim access.log
+$ vim .gitignore
+$ git status
+$ mkdir log
+$ mv access.log log/
+$ ls
+$ git status
+$ vim .gitignore
+$ git status
+$ git commit -m "ignore log directory"
+                            </code>
+                        </pre>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Retour à l'état d'origine</h1>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="hljs" data-trim data-line-numbers="1-5">
+$ pwd
+$ ls
+$ git status
+$ git pull origin master
+$ git push origin master
                             </code>
                         </pre>
                     </section>
