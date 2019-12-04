@@ -1,2 +1,2 @@
-toto conflit1
-feature2130 --
+toto
+conflit master
